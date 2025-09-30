@@ -5,7 +5,7 @@ float totalArrecadado = 0;
 //Procedimento: adiciona a contribuição de um participante
 void adicionaContribuicao(float valor){
     totalArrecadado += valor;
-    printf("Contribuição de R$ %.2f adicionada! Total: R$ %.2f",valor, totalArrecadado);
+    printf("Contribuição de R$ %.2f adicionada! Total: R$ %.2f! ",valor , totalArrecadado);
 }
 
 //Função: calcula quantidade de carne por pessoa(0.5kg por pessoa)
@@ -23,12 +23,8 @@ void mostraResumo(int qtdPessoas){
     printf("Carne necessária : %.2f KG\n", carne);
     printf("Total arrecadado: R$ %.2f\n", totalArrecadado);
     printf("Média por pessoa: R$ %.2f\n", media);
-    printf("================================");
+    printf("============================ ");
 }
-
-
-
-
 
 
 
@@ -40,6 +36,14 @@ int main(){
 
     printf("Digite o número de participantes: ");
     scanf("%d" ,&pessoas);
+
+    for (int i =1 ; i<= pessoas; i++){
+        printf("Digite a contribuição do participante %d: R$ ", i);
+        scanf("%f", &valor);
+        adicionaContribuicao(valor);
+
+
+    }
 
     mostraResumo(pessoas);
 
